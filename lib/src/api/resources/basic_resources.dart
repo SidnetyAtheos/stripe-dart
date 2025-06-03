@@ -55,11 +55,10 @@ class BasicResource {
         params: params);
   }
 
-  Future<Map<String, dynamic>?> cancel(String endpoint, String id,
-      {Map<String, dynamic>? params}) {
-    return _stripe.request(RequestMethod.post, "$endpoint/$id/cancel",
-        params: params);
-  }
+Future<Map<String, dynamic>?> cancel(String id,
+    {Map<String, dynamic>? params}) {
+  return _resource.cancelSubscription(_endpoint, id, params: params);
+}
 
   Future<Map<String, dynamic>?> voidResource(String endpoint, String id,
       {Map<String, dynamic>? params}) {
