@@ -127,4 +127,10 @@ class BasicResource {
     return _stripe.request(RequestMethod.post, "$endpoint/$id/confirm",
         params: params);
   }
+
+  Future<Map<String, dynamic>?> cancelSubscription(String endpoint, String id,
+    {Map<String, dynamic>? params}) {
+  return _stripe.request(RequestMethod.delete, "$endpoint/$id",
+      params: params);
+}
 }
