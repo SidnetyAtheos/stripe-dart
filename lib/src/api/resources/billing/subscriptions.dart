@@ -29,8 +29,11 @@ class Subscriptions {
     return _resource.list(_endpoint, params: params);
   }
 
-  Future<Map<String, dynamic>?> cancel(String id,
-      {Map<String, dynamic>? params}) {
+  Future<Map<String, dynamic>?> cancel(String id,{Map<String, dynamic>? params}) {
     return _resource.cancel(_endpoint, id, params: params);
   }
+
+  Future<Map<String, dynamic>?> cancelNovo(String id, {Map<String, dynamic>? params}) {
+  return _resource.cancelSubscription(_endpoint, id, params: params);
+}
 }
